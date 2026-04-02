@@ -5,6 +5,7 @@ public class Picker : MonoBehaviour
 
     AudioSource player;
     private AudioClip[] notes;
+    [HideInInspector]
     public AudioClip mystery;
 
     void Awake()
@@ -18,11 +19,11 @@ public class Picker : MonoBehaviour
         PickSound();
     }
 
-    void PickSound()
+    public void PickSound()
     {
         int choice = UnityEngine.Random.Range(0, notes.Length);
 
-        Debug.Log(notes.Length);
+       // Debug.Log(notes.Length);
 
         player.clip = notes[choice];
 

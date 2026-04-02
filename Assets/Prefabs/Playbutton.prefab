@@ -240,7 +240,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 0.9936446
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -350,8 +350,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Radius: 0.5
+  m_Offset: {x: 0, y: 0.0031776428}
+  m_Radius: 1.0052583
 --- !u!114 &4152927807887507442
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -376,3 +376,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5af57954360f6d84c8f01073ef69597e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Picker
+  mystery: {fileID: 0}
