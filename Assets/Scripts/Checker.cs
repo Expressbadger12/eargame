@@ -1,3 +1,4 @@
+using System.Collections;
 using TMPro;
 using Unity.Multiplayer.Center.Common;
 using UnityEngine;
@@ -48,11 +49,59 @@ public class Checker : MonoBehaviour
     {
     }
 
+    string CleanUp(string submission)
+    {
+        submission = submission.ToUpper();
+        submission = submission.Trim();
+
+        if (submission.Length >= 2)
+        {
+            switch (submission.Substring(0, 2)) //maybe I can do this whole thing with a dictionary, but this is good for now. 
+            {
+                case "DB":
+                    submission = "C#" + submission.Substring(2);
+                    break;
+                case "EB":
+                    submission = "D#" + submission.Substring(2);
+                    break;
+                case "GB":
+                    submission = "F#" + submission.Substring(2);
+                    break;
+                case "AB":
+                    submission = "G#" + submission.Substring(2);
+                    break;
+                case "BB":
+                    submission = "A#" + submission.Substring(2);
+                    break;
+                case "CB":
+                    submission = "B" + submission.Substring(2);
+                    break;
+                case "FB":
+                    submission = "E" + submission.Substring(2);
+                    break;
+                case "E#":
+                    submission = "F" + submission.Substring(2);
+                    break;
+                case "B#":
+                    submission = "C" + submission.Substring(2);
+                    break;
+                default:
+                    break;
+            }
+
+        }
+
+        return submission;
+    }
+
+
     void OnClick()
     {
-        string submission = inputArea.text; // or maybe it's this that doesn't work
+        string submission = CleanUp(inputArea.text);// or maybe it's this that doesn't work
                                             //  Debug.Log("Clicked! " + submission);
                                             //Debug.Log(picker.mystery);
+
+
 
         string answer = picker.mystery.name;
 
